@@ -56,7 +56,7 @@ function Song() {
           trigger={<MdMoreVert className="cursor-pointer" size={25} />}
         />
       </div>
-      {isLoading ? <FullPageSpinner /> : <Player tab={tab} song={songToPlay} />}
+      {isLoading ? <p>Loading...</p> : <Player tab={tab} song={songToPlay} />}
     </motion.div>
   );
 }

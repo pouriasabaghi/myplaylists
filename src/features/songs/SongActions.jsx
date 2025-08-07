@@ -66,12 +66,14 @@ function SongActions({ song, trigger, playlist }) {
                 />
                 <div className="flex flex-col items-start gap-y-1">
                   <OneLineText>
-                    <span className="max-w-64 md:max-w-80 text-sm font-bold">
+                    <span className="max-w-64 text-sm font-bold md:max-w-80">
                       {song.name}
                     </span>
                   </OneLineText>
                   <OneLineText>
-                    <span className="max-w-64 md:max-w-80 text-sm">{song.artist}</span>
+                    <span className="max-w-64 text-sm md:max-w-80">
+                      {song.artist}
+                    </span>
                   </OneLineText>
                 </div>
               </div>
@@ -102,7 +104,7 @@ function SongActions({ song, trigger, playlist }) {
                   </div>
                   <span className="mt-2 text-xs font-bold">Favorite</span>
                 </div>
-                
+
                 <div
                   className="flex cursor-pointer flex-col items-center"
                   onClick={() => setDeleteSongAlertOpen(true)}
@@ -112,7 +114,6 @@ function SongActions({ song, trigger, playlist }) {
                   </div>
                   <span className="mt-2 text-xs font-bold">Delete</span>
                 </div>
-
 
                 {playlist && (
                   <div

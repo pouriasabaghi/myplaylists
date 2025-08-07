@@ -14,11 +14,7 @@ export default function Subscribe({ userId, userIdParam }) {
     <Button
       onClick={handleSubscribe}
       disabled={isPending || isLoading}
-      className={`text-white ${
-        isSubscribe
-          ? "bg-gray-700 hover:bg-gray-600"
-          : "bg-purple-500 hover:bg-purple-400"
-      } `}
+      className="border border-purple-400 bg-transparent text-purple-400 hover:bg-transparent"
     >
       {isSubscribe ? "Unsubscribe" : "Subscribe"}
     </Button>

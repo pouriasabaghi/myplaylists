@@ -22,7 +22,7 @@ function SongCard({ song }) {
   return (
     <div
       onClick={() => handlePlayer(song)}
-      className="flex max-w-40 flex-shrink-0 flex-col cursor-pointer"
+      className="flex max-w-40 flex-shrink-0 cursor-pointer flex-col"
     >
       <img
         className="h-40 w-40 rounded-lg object-cover"

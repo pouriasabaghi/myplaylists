@@ -26,7 +26,9 @@ export default function ProfileInfo({ userId, userIdParam }) {
         </div>
       )}
       <div className="mb-3 flex w-full flex-col gap-y-1">
-        <h4 className="text-2xl font-bold capitalize">{profile.name}</h4>
+        <h4 className="w-2/3 truncate text-2xl font-bold capitalize xl:w-5/6">
+          {profile.name}
+        </h4>
         <p className="line-clamp-3 break-words text-sm font-semibold text-gray-300 lg:w-full">
           {profile.bio ? profile.bio : ""}
         </p>
