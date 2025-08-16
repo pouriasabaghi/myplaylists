@@ -5,9 +5,12 @@ import Subscribe from "../subscription/Subscribe";
 import { Link } from "react-router-dom";
 import useGetSubscribers from "../subscription/useGetSubscribers";
 import useGetSubscriptions from "../subscription/useGetSubscriptions";
+import useIsSubscribe from "../subscription/useIsSubscribe";
 
 export default function ProfileInfo({ userId, userIdParam }) {
   const { isLoading, profile } = useGetUserProfile(userId);
+  const { isSubscribe, isLoading: isSubscribedLoading } =
+    useIsSubscribe(userIdParam);
   const { user } = useAuth();
 
   const specificUser = userIdParam || userId;
@@ -17,14 +20,19 @@ export default function ProfileInfo({ userId, userIdParam }) {
   const { subscriptions = [], isLoading: isLoadingSubscriptions } =
     useGetSubscriptions(specificUser);
 
-  if (isLoading && isLoadingSubscribers && isLoadingSubscriptions)
+  if (
+    isLoading ||
+    isLoadingSubscribers ||
+    isLoadingSubscriptions ||
+    isSubscribedLoading
+  )
     return <FullPageSpinner />;
 
   return (
     <div className="relative p-5">
       {user.id !== userId && (
         <div className="absolute right-2 top-0 lg:right-5">
-          <Subscribe userId={userId} userIdParam={userIdParam} />
+          <Subscribe userId={userId} isSubscribed={isSubscribe} />
         </div>
       )}
       <div className="mb-3 flex w-full flex-col gap-y-1">

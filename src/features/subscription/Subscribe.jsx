@@ -1,10 +1,8 @@
 import { useSubscribe } from "./useSubscribe";
-import useIsSubscribe from "./useIsSubscribe";
 import { Button } from "@/ui/button";
 
-export default function Subscribe({ userId, userIdParam }) {
+export default function Subscribe({ userId, isSubscribed }) {
   const { subscribe, isPending } = useSubscribe();
-  const { isSubscribe, isLoading } = useIsSubscribe(userIdParam);
 
   const handleSubscribe = () => {
     subscribe(userId);
@@ -13,10 +11,10 @@ export default function Subscribe({ userId, userIdParam }) {
   return (
     <Button
       onClick={handleSubscribe}
-      disabled={isPending || isLoading}
+      disabled={isPending}
       className="border border-purple-400 bg-transparent text-purple-400 hover:bg-transparent"
     >
-      {isSubscribe ? "Unsubscribe" : "Subscribe"}
+      {isSubscribed ? "Unsubscribe" : "Subscribe"}
     </Button>
   );
 }

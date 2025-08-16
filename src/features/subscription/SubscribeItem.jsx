@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import myPlaylistsCover from "../../assets/img/no-cover-logo.png";
 import Subscribe from "./Subscribe";
 import { useAuth } from "@/context/AuthContext";
@@ -23,7 +24,7 @@ export default function SubscribeItem({ sub }) {
       </Link>
       <div className="col-span-2 place-self-center xl:col-span-2">
         {user.id !== sub.id && (
-          <Subscribe userId={sub.id} userIdParam={user.id} />
+          <Subscribe userId={sub.id} isSubscribed={sub.is_subscribed} />
         )}
       </div>
     </div>
