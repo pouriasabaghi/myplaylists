@@ -24,7 +24,7 @@ export default function SubscribeItem({ sub }) {
       </Link>
       <div className="col-span-2 place-self-center xl:col-span-2">
         {user.id !== sub.id && (
-          <Subscribe userId={sub.id} userIdParam={user.id} />
+          <Subscribe userId={sub.id} isSubscribed={sub.is_subscribed} />
         )}
       </div>
     </div>

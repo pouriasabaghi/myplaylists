@@ -25,7 +25,7 @@ export default function Profile({ userId, userIdParam }) {
       </div>
 
       {/* user section */}
-      <div className="relative left-5 -mt-[115px] flex w-full items-center gap-x-3 md:-mt-[130px]">
+      <div className="relative left-5 -mt-[105px] flex w-full items-center gap-x-3 md:-mt-[130px]">
         <img
           src={profile.avatar ? profile.avatar : myPlaylistsCover}
           alt="user"
@@ -37,7 +37,7 @@ export default function Profile({ userId, userIdParam }) {
         <ProfileInfo userId={+userId} userIdParam={userIdParam} />
       </div>
 
-      <div className="my-10">
+      <div className="my-8">
         <h4 className="pb-5 text-2xl font-bold">Latest Songs</h4>
         <div className="mp-carousel -me-5 flex gap-x-3 overflow-auto pb-1 pe-5">
           {profile.latest_songs.map((song) => (
